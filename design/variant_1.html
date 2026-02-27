@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lunar Silence - Release Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "charcoal": "#121212",
+                        "moonlit-grey": "#2a2a2a",
+                        "off-white": "#E0E0E0",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 2s ease-out forwards',
+                        'subtle-pulse': 'subtlePulse 4s infinite ease-in-out',
+                        'glow': 'glow 3s infinite alternate',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        subtlePulse: {
+                            '0%, 100%': { opacity: '0.3' },
+                            '50%': { opacity: '0.5' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 5px rgba(224, 224, 224, 0.1)' },
+                            '100%': { boxShadow: '0 0 20px rgba(224, 224, 224, 0.3)' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .input-area {
+                @apply bg-transparent text-off-white font-thin text-3xl md:text-4xl w-full text-center outline-none border-none placeholder-stone-600/30 caret-stone-500;
+                resize: none;
+                overflow: hidden;
+                min-height: 3rem;
+            }
+            .ink-effect {
+                text-shadow: 0 0 1px rgba(224, 224, 224, 0.5);
+            }
+        }
+    </style>
+</head>
+<body class="bg-charcoal text-off-white font-sans antialiased overflow-hidden h-screen w-screen flex flex-col items-center justify-center selection:bg-stone-700/30">
+<div class="absolute inset-0 bg-gradient-to-b from-[#151515] to-[#0f0f0f] pointer-events-none z-0"></div>
+<div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[radial-gradient(circle,_rgba(255,255,255,0.03)_0%,_transparent_70%)] blur-[100px] pointer-events-none z-0"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-[radial-gradient(circle,_rgba(255,255,255,0.02)_0%,_transparent_70%)] blur-[80px] pointer-events-none z-0"></div>
+<main class="relative z-10 w-full max-w-3xl flex flex-col items-center justify-center px-6">
+<header class="mb-16 md:mb-24 opacity-0 animate-fade-in" style="animation-delay: 0.5s;">
+<p class="text-stone-500 font-extralight tracking-[0.2em] uppercase text-xs text-center">
+                Lunar Silence
+            </p>
+</header>
+<div class="w-full relative opacity-0 animate-fade-in" style="animation-delay: 1s;">
+<form action="#" onsubmit="event.preventDefault(); document.getElementById('confirmation').classList.remove('opacity-0'); document.getElementById('main-input').value = ''; document.getElementById('main-input').blur();">
+<textarea autofocus="" class="input-area ink-effect focus:ring-0 focus:border-0" id="main-input" placeholder="Release your thought..." rows="1" spellcheck="false"></textarea>
+<div class="w-full h-[1px] bg-gradient-to-r from-transparent via-stone-700/30 to-transparent mt-4"></div>
+</form>
+</div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center transition-opacity duration-[2000ms] opacity-0 pointer-events-none" id="confirmation">
+<p class="font-extralight text-stone-600/40 tracking-widest text-lg md:text-xl blur-[0.5px]">
+                It is held for you until morning.
+            </p>
+</div>
+</main>
+<footer class="absolute bottom-12 w-full text-center z-10 opacity-0 animate-fade-in" style="animation-delay: 2s;">
+<button class="group relative inline-flex items-center justify-center p-4" onclick="document.querySelector('form').dispatchEvent(new Event('submit'))">
+<span class="material-symbols-outlined text-stone-600 font-light text-2xl transition-all duration-700 group-hover:text-stone-400 group-hover:scale-110">
+                radio_button_unchecked
+            </span>
+<span class="absolute text-[10px] tracking-[0.2em] uppercase text-stone-700 mt-16 opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:mt-12">
+                Release
+            </span>
+</button>
+</footer>
+<div class="absolute inset-0 pointer-events-none opacity-[0.03] z-50 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIi8+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiMwMDAiLz4KPC9zdmc+')]"></div>
+<script>
+        // Simple auto-resize for textarea to maintain center alignment feel
+        const textarea = document.getElementById('main-input');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+            document.getElementById('confirmation').classList.add('opacity-0');
+        });
+        // Handle Enter key to submit
+        textarea.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                document.querySelector('form').dispatchEvent(new Event('submit'));
+            }
+        });
+    </script>
+
+</body></html>

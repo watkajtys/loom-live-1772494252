@@ -1,6 +1,6 @@
 **
-* **Name:** Release
-* **Palette:** Deep Oceanic Navy (Background Void), Abyssal Slate (Gradients), Muted Starlight (Faded Text).
-* **Typography:** Elegant, soothing Italic Serif (e.g., *EB Garamond* or *Baskerville*) for the primary confirmation message to provide a human, gentle touch; paired with a hyper-minimal, widely tracked Sans-Serif (e.g., *Inter* or *SF Pro*) for the subtle utility text at the bottom.
+*   **Name:** Mise
+*   **Palette:** Alabaster (Background) / Charcoal (Text) / Cobalt Blue (Accents & Active States)
+*   **Typography:** Primary: Clean Grotesk Sans-Serif (for immediate legibility of steps and ingredients) / Secondary: Elegant Italic Serif (for secondary notes and textures)
 
-2
+3

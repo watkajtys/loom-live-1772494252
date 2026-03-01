@@ -1,89 +1,87 @@
 <!DOCTYPE html>
-<html class="dark" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>The Bathypelagic Void - Deep Abyss Release</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Cinzel:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<title>Culinary Presence Prep Mode - Parchment Theme</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;400;500;700&amp;family=Crimson+Text:ital,wght@0,400;0,600;1,400&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "abyss-dark": "#000814",
-                        "abyss-teal": "#001a2c",
-                        "silver-blue": "#c4dbe0",
-                        "glow-blue": "#a4c8d1",
-                    },
+                        "ink": "#0a192f","ink-light": "#334155",
+                        "parchment": "#fdfbf7","parchment-dark": "#f0ede6",
+                        "highlight": "#2563eb",},
                     fontFamily: {
-                        "serif": ["Playfair Display", "serif"],
-                        "cinematic": ["Cinzel", "serif"]
+                        "sans": ["DM Sans", "sans-serif"],
+                        "serif": ["Crimson Text", "serif"],
                     },
-                    animation: {
-                        'blink-glow': 'blinkGlow 2s infinite',
-                        'pulse-deep': 'pulseDeep 6s ease-in-out infinite',
-                        'drift-slow': 'drift 25s infinite alternate ease-in-out',
-                        'shimmer': 'shimmer 10s infinite linear',
-                    },
-                    keyframes: {
-                        blinkGlow: {
-                            '0%, 100%': { opacity: '1', boxShadow: '0 0 15px rgba(164, 200, 209, 0.4)' },
-                            '50%': { opacity: '0.3', boxShadow: '0 0 5px rgba(164, 200, 209, 0.1)' },
-                        },
-                        pulseDeep: {
-                            '0%, 100%': { opacity: '0.6' },
-                            '50%': { opacity: '0.3' },
-                        },
-                        drift: {
-                            '0%': { transform: 'translate(0, 0)' },
-                            '100%': { transform: 'translate(10px, -15px)' },
-                        },
-                         shimmer: {
-                            '0%': { backgroundPosition: '-1000px 0' },
-                            '100%': { backgroundPosition: '1000px 0' }
-                        }
-                    }
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
                 },
             },
         }
     </script>
-<style type="text/tailwindcss">
-        @layer utilities {
-            .text-glow {
-                text-shadow: 0 0 20px rgba(164, 200, 209, 0.3), 0 0 10px rgba(164, 200, 209, 0.1);
-            }
-            .cursor-glow {
-                box-shadow: 0 0 10px 2px rgba(196, 219, 224, 0.3);
-            }
-        }
-    </style>
 </head>
-<body class="bg-abyss-dark text-silver-blue font-serif antialiased overflow-hidden h-screen w-screen relative selection:bg-abyss-teal selection:text-white cursor-text" onclick="document.getElementById('hidden-input').focus()">
-<div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_30%,_#0c2a44_0%,_#000814_60%)] opacity-60 pointer-events-none"></div>
-<div class="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_bottom,_#03182b_0%,_transparent_50%)] opacity-40 pointer-events-none"></div>
-<div class="absolute top-1/3 left-1/4 w-96 h-96 bg-abyss-teal/20 rounded-full blur-[100px] animate-pulse-deep pointer-events-none"></div>
-<div class="absolute bottom-1/4 right-1/3 w-64 h-64 bg-teal-900/10 rounded-full blur-[80px] animate-drift-slow pointer-events-none"></div>
-<div class="relative z-10 w-full h-full flex flex-col items-center justify-center">
-<textarea autofocus="" class="absolute opacity-0 w-1 h-1 -z-10" id="hidden-input"></textarea>
-<div class="relative w-full max-w-5xl h-3/4 flex flex-col items-center justify-center pointer-events-none" id="typing-area">
-<div class="w-0.5 h-12 bg-silver-blue/90 animate-blink-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 rounded-full" id="central-cursor"></div>
-<span class="absolute text-3xl font-serif italic text-teal-900/20 blur-[1px] top-[20%] left-[20%] animate-drift-slow select-none">release</span>
-<span class="absolute text-4xl font-serif italic text-teal-800/10 blur-[2px] bottom-[25%] right-[25%] animate-drift-slow select-none delay-1000">drift</span>
-<span class="absolute text-2xl font-serif italic text-teal-700/10 blur-[1px] top-[30%] right-[30%] animate-drift-slow select-none delay-500">silence</span>
-<div class="relative text-4xl md:text-5xl lg:text-6xl font-normal text-silver-blue text-glow tracking-wide mix-blend-screen px-8 text-center leading-relaxed opacity-0">
+<body class="bg-parchment text-ink font-sans min-h-screen flex flex-col overflow-hidden selection:bg-highlight/10 selection:text-highlight">
+<div class="relative flex h-screen w-full flex-col items-center justify-between cursor-pointer group">
+<div class="absolute inset-0 bg-[#f8f5ee] opacity-50 pointer-events-none mix-blend-multiply"></div>
+<div class="absolute top-0 left-0 w-full h-1.5 bg-ink/5 z-20">
+<div class="h-full bg-highlight w-2/3"></div>
+</div>
+<div class="relative z-10 w-full max-w-7xl px-8 pt-12 flex flex-col items-center">
+<div class="flex items-center gap-2 mb-6 text-ink/50 text-xs font-bold tracking-widest uppercase font-sans">
+<span class="material-symbols-outlined text-lg">kitchen</span>
+<span>Mise en Place</span>
+</div>
+<div class="flex flex-wrap justify-center gap-x-8 gap-y-4 font-serif text-lg">
+<div class="group/item flex items-center gap-2 text-ink/60 transition-colors hover:text-ink">
+<span class="italic">2 Cloves Garlic</span>
+</div>
+<div class="relative flex items-center gap-2 text-ink font-semibold">
+<span>400g Pasta</span>
+<span class="absolute -bottom-1 left-0 w-full h-0.5 bg-highlight/60 rounded-full"></span>
+</div>
+<div class="group/item flex items-center gap-2 text-ink/60 transition-colors hover:text-ink">
+<span class="italic">Fresh Basil</span>
+</div>
+<div class="group/item flex items-center gap-2 text-ink/60 transition-colors hover:text-ink">
+<span class="italic">Olive Oil</span>
+</div>
+<div class="group/item flex items-center gap-2 text-ink/60 transition-colors hover:text-ink">
+<span class="italic">Sea Salt</span>
 </div>
 </div>
-<div class="absolute bottom-1/3 transform translate-y-12 pointer-events-none text-center">
-<p class="font-serif italic text-2xl md:text-3xl text-silver-blue/50 tracking-wider font-light animate-pulse-deep">
-                It is held for you. Now, rest.
+</div>
+<div class="relative z-10 flex-1 flex flex-col items-center justify-center px-6 max-w-5xl mx-auto w-full text-center">
+<div class="mb-10 inline-flex items-center justify-center w-12 h-12 rounded-full text-highlight">
+<span class="material-symbols-outlined text-4xl">skillet</span>
+</div>
+<h1 class="text-ink text-5xl md:text-6xl font-normal leading-tight tracking-wide mb-10">
+                Toss the pasta with the emulsified sauce and a splash of reserved water.
+            </h1>
+<div class="h-px w-16 bg-ink/10 my-6"></div>
+<p class="text-ink-light font-serif text-xl md:text-2xl italic leading-relaxed max-w-2xl">
+                "Aim for a glossy texture. If it looks dry, add another tablespoon of pasta water and keep tossing vigorously."
             </p>
 </div>
-<div class="absolute bottom-10 opacity-30 text-xs tracking-[0.4em] uppercase text-glow-blue font-cinematic pointer-events-none">
-            Type to release â¢ Enter to submit
-        </div>
+<div class="relative z-10 w-full pb-12 flex flex-col items-center justify-end">
+<p class="text-highlight/80 text-xs font-bold tracking-[0.2em] uppercase mb-10 opacity-70">
+                Click to advance
+            </p>
+<div class="flex items-center gap-12 text-ink/40">
+<button aria-label="Previous Step" class="p-4 hover:text-highlight transition-colors hover:bg-ink/5 rounded-full">
+<span class="material-symbols-outlined text-3xl font-light">arrow_back</span>
+</button>
+<div class="text-sm font-sans font-semibold tracking-widest text-ink/30">STEP 4 <span class="mx-1 text-ink/10">/</span> 6</div>
+<button aria-label="Next Step" class="p-4 hover:text-highlight transition-colors hover:bg-ink/5 rounded-full">
+<span class="material-symbols-outlined text-3xl font-light">arrow_forward</span>
+</button>
 </div>
-<div class="absolute inset-0 z-20 pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,_#000814_95%)]"></div>
+</div>
+<div class="absolute inset-0 z-0 opacity-[0.4] pointer-events-none mix-blend-multiply" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.15%22/%3E%3C/svg%3E');"></div>
+</div>
 
 </body></html>

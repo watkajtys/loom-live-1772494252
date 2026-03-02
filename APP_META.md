@@ -1,6 +1,6 @@
 **
-*   **Name:** Mise
-*   **Palette:** Alabaster (Background) / Charcoal (Text) / Cobalt Blue (Accents & Active States)
-*   **Typography:** Primary: Clean Grotesk Sans-Serif (for immediate legibility of steps and ingredients) / Secondary: Elegant Italic Serif (for secondary notes and textures)
+*   **Name:** Warp Logger
+*   **Palette:** High-Contrast Minimalist — Pitch black (#000000) background, stark white (#FFFFFF) for text and structural wireframes/borders, and a singular, high-visibility bright orange (#FF4500) accent for active states, playheads, and selections.
+*   **Typography:** Utilitarian & Technical — A bold, extended geometric sans-serif for main branding and section headers to convey structure, paired with a highly legible, monospaced or pseudo-monospaced font for timestamps, log entries, and keyboard inputs to emphasize precision and data entry.
 
-3
+6

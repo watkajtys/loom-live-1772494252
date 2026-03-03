@@ -22,7 +22,7 @@ test.describe('Warp Logger', () => {
     await page.goto('/logger');
 
     // Default state: Paused
-    await expect(page.locator('text=PAUSED')).toBeVisible();
+    await expect(page.locator('text=STANDBY')).toBeVisible();
     const playButton = page.locator('button', { hasText: 'Play (Space)' });
     await expect(playButton).toBeVisible();
 
@@ -33,7 +33,7 @@ test.describe('Warp Logger', () => {
 
     // Spacebar to Pause
     await page.keyboard.press('Space');
-    await expect(page.locator('text=PAUSED')).toBeVisible();
+    await expect(page.locator('text=STANDBY')).toBeVisible();
     await expect(page.locator('button', { hasText: 'Play (Space)' })).toBeVisible();
   });
 
@@ -45,15 +45,15 @@ test.describe('Warp Logger', () => {
 
     // Press '1' for Play Action
     await page.keyboard.press('1');
-    await expect(page.locator('.uppercase.text-white\\/90', { hasText: 'PLAY ACTION' })).toBeVisible();
+    await expect(page.locator('.uppercase.font-sans', { hasText: 'Play Action' }).first()).toBeVisible();
 
     // Press '3' for Goal
     await page.keyboard.press('3');
-    await expect(page.locator('.uppercase.text-white\\/90', { hasText: 'GOAL' })).toBeVisible();
+    await expect(page.locator('.uppercase.font-sans', { hasText: 'Goal' }).first()).toBeVisible();
 
     // Check event manifest count (Header usually has something like "Event Manifest 2")
     const manifestHeader = page.locator('h2', { hasText: 'Event Manifest' });
-    await expect(manifestHeader.locator('span').nth(1)).toHaveText('2');
+    await expect(manifestHeader.locator('span').nth(1)).toHaveText('2 LOGS');
   });
 
   test('should trigger CSV download', async ({ page }) => {

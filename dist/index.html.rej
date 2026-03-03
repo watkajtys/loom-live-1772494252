@@ -1,0 +1,12 @@
+diff a/dist/index.html b/dist/index.html	(rejected hunks)
+@@ -4,8 +4,8 @@
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Loom App</title>
+-    <script type="module" crossorigin src="/assets/index-BJi-xBP9.js"></script>
+-    <link rel="stylesheet" crossorigin href="/assets/index-gVNNLVzR.css">
++    <script type="module" crossorigin src="/assets/index-DyhzAO9M.js"></script>
++    <link rel="stylesheet" crossorigin href="/assets/index-PeS6hH85.css">
+   </head>
+   <body>
+     <div id="root"></div>
